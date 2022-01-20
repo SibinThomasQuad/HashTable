@@ -14,6 +14,12 @@ class Hash:
         for count in array_data:
             if(count[0] == key):
                 return count[1]
+    def remove(self,array_data,key):
+        index = 0
+        for count in array_data:
+            if(count[0] == key):
+                del array_data[index]
+        index = index + 1
 
 
 #usage
@@ -21,5 +27,6 @@ system_info = []
 hash_obj = Hash()
 system_info = hash_obj.set(system_info,'name2','sibin')
 system_info = hash_obj.set(system_info,'age2','25')
+hash_obj.remove(system_info,'age2')
 print(hash_obj.get(system_info,'name2'))
 print(system_info)
